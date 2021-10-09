@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 const chalk = require('chalk')
 
+const {username, password} = require('./confidential')
 const Tasks = require('./models/tasks')
 
-mongoose.connect('mongodb+srv://DbConnect:test12345@cluster.bh7j7.mongodb.net/TasksHandler?retryWrites=true&w=majority', {
+
+mongoose.connect(`mongodb+srv://${username}:${password}@cluster.bh7j7.mongodb.net/TasksHandler?retryWrites=true&w=majority`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
