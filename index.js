@@ -87,12 +87,11 @@ async function deleteDocument() {
     await Tasks.findByIdAndDelete({
             _id: '616056907eea65a1bb129aba'
         })
-        .then((err) => {
+        .then(() => {
+                console.log(chalk.red("Deleted the doc"))
+        }).catch((err) => {
             if (err) {
                 console.log(chalk.bgRed(`error: ${err}`))
             }
-            else {
-                console.log(chalk.red("Deleted the doc"))
-            }
-        })
+    })
 }
